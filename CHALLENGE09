@@ -1,0 +1,16 @@
+import requests
+
+url = "https://api.hubspot.com/crm/v3/objects/contacts"
+
+querystring = {"limit":"20","properties":"firstname,email","after":"121"}
+
+payload = ""
+headers = {
+    "cookie": "__cf_bm=O3wT2MOnjXQaA1LTieUKbtRCZt9sjbFcYiTUlkx02Jg-1694303785-0-ASmmn7ZVuhzTx8ETJfK1ySKUd8CSv3j%2F3nGGDH36ada16xHnNyfHjbxqBcMpy9YlVC%2FcYALWrT6LtEaVaWYdTmk%3D",
+    "User-Agent": "Insomnia/2023.5.7",
+    "Authorization": "Bearer pat-na1-588c2ac1-f3a3-4fbf-a7db-802e4238901f"
+}
+
+response = requests.request("GET", url, data=payload, headers=headers, params=querystring)
+
+print(response.text)
